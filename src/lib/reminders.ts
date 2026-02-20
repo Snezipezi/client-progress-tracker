@@ -1,5 +1,5 @@
-import db from "@/lib/db";
-import { sendReminderEmail } from "@/lib/email";
+import db from "./db";
+import { sendReminderEmail } from "./email";
 
 export type ReminderResult = {
   attempted: number;

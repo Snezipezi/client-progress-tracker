@@ -1,6 +1,6 @@
 "use server";
 
-import db from "@/lib/db";
+import db from "../../../lib/db";
 import { redirect } from "next/navigation";
 
 export async function submitCheckinAction(formData: FormData) {

@@ -1,5 +1,5 @@
-import db from "@/lib/db";
-import { requireAdmin } from "@/lib/auth";
+import db from "../../lib/db";
+import { requireAdmin } from "../../lib/auth";
 import {
   addClientAction,
   deleteClientAction,

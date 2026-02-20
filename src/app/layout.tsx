@@ -1,5 +1,5 @@
 import "./globals.css";
-import { startReminderScheduler } from "@/lib/scheduler";
+import { startReminderScheduler } from "../lib/scheduler";
 
 export const metadata = {
   title: "Sledování pokroku klientů",

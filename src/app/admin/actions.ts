@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import crypto from "crypto";
-import db from "@/lib/db";
+import db from "../../lib/db";
 
 function generateToken() {
   return crypto.randomBytes(16).toString("hex");
@@ -53,7 +53,7 @@ export async function deleteClientAction(formData: FormData) {
 }
 
 export async function logoutAction() {
-  const { clearAdminSession } = await import("@/lib/auth");
+  const { clearAdminSession } = await import("../../lib/auth");
   clearAdminSession();
   redirect("/admin/login");
 }

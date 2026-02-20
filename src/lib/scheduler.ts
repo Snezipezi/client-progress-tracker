@@ -1,5 +1,5 @@
 import cron from "node-cron";
-import { runReminderSweep } from "@/lib/reminders";
+import { runReminderSweep } from "./reminders";
 
 let started = false;
 

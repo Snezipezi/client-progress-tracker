@@ -37,3 +37,18 @@ You can also trigger reminders manually:
 ```bash
 curl -X POST http://localhost:3000/api/cron
 ```
+
+## Deploy na Render
+
+Repo je pripraveny pro Render Blueprint (`render.yaml`) vcetne persistentniho disku pro SQLite (`/data/app.db`).
+
+1. Nahraj posledni zmeny na GitHub (`main`).
+2. V Renderu zvol `New +` -> `Blueprint` a vyber tento repozitar.
+3. Pri vytvareni sluzby nastav:
+   - `ADMIN_PASSWORD` (povinne)
+   - SMTP promenne (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`) pokud chces posilat pripominky e-mailem
+4. Dokonci deploy.
+
+Poznamka:
+- Bez SMTP budou pripominky pres e-mail automaticky vypnute.
+- SQLite data zustanou zachovana na persistentnim disku mezi deployi.

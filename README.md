@@ -40,7 +40,7 @@ curl -X POST http://localhost:3000/api/cron
 
 ## Deploy na Render
 
-Repo je pripraveny pro Render Blueprint (`render.yaml`) vcetne persistentniho disku pro SQLite (`/data/app.db`).
+Repo je pripraveny pro Render Blueprint (`render.yaml`).
 
 1. Nahraj posledni zmeny na GitHub (`main`).
 2. V Renderu zvol `New +` -> `Blueprint` a vyber tento repozitar.
@@ -51,4 +51,5 @@ Repo je pripraveny pro Render Blueprint (`render.yaml`) vcetne persistentniho di
 
 Poznamka:
 - Bez SMTP budou pripominky pres e-mail automaticky vypnute.
-- SQLite data zustanou zachovana na persistentnim disku mezi deployi.
+- Na Free tarifu Render nejsou disky podporovane, takze SQLite data nejsou trvala.
+- Pro trvala SQLite data pouzij Starter plan a pridej persistentni disk.

@@ -43,16 +43,17 @@ db.exec(`
 
 const clientColumns = db
   .prepare("PRAGMA table_info(clients)")
-  .all()
-  .map((col) => col.name);
+  .all() as Array<{ name: string }>;
 
-if (!clientColumns.includes("phone")) {
+const clientColumnNames = clientColumns.map((col) => col.name);
+
+if (!clientColumnNames.includes("phone")) {
   db.exec("ALTER TABLE clients ADD COLUMN phone TEXT");
 }
-if (!clientColumns.includes("start_weight")) {
+if (!clientColumnNames.includes("start_weight")) {
   db.exec("ALTER TABLE clients ADD COLUMN start_weight REAL");
 }
-if (!clientColumns.includes("target_weight")) {
+if (!clientColumnNames.includes("target_weight")) {
   db.exec("ALTER TABLE clients ADD COLUMN target_weight REAL");
 }
 

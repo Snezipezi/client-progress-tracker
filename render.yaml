@@ -3,13 +3,11 @@ services:
     name: client-progress-tracker
     env: node
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start -- -H 0.0.0.0 -p $PORT
     envVars:
       - key: NODE_VERSION
         value: 20
-      - key: NODE_ENV
-        value: production
       - key: ADMIN_PASSWORD
         sync: false
       - key: SMTP_HOST
